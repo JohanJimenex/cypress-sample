@@ -1,0 +1,6 @@
+
+# ignorar archivos y carpetas para que nos e suban a github
+node_modules/
+screenshots/
+fixtures/
+

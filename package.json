@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "start": "npx cypress open",
+    "starth": "npx cypress run"
+  },
+  "dependencies": {
+    "cypress": "^13.11.0"
+  }
+}
