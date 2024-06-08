@@ -4,12 +4,14 @@ class LoginPage {
   #buttonSubmit = "#login-button";
 
   Login(username, password) {
-    cy.get(inputUsername).type(username);
-    cy.get(inputPassword).type(password);
+    //Se debe llamar el nombre d ela variable privada con this y con el simbolo # que incluye el nombre de la variable privada
+    cy.get(this.#inputUsername).type(username);
+    cy.get(this.#inputPassword).type(password);
+    this.Submit();
   }
 
   Submit() {
-    cy.get(buttonSubmit).click();
+    cy.get(this.#buttonSubmit).click();
   }
 }
 
