@@ -14,7 +14,7 @@ describe("Login Page Tests Cases", () => {
   const loginPage = new LoginPage();
 
   //Este es un ejemplo de como se puede usar context para agrupar aun mas los casos de prueba, en este caso para los positivos
-  context("Happy Paths or Positive Tests (usando contex())", () => {
+  context("Happy Paths or Positive Tests usando el metodo context", () => {
     it("Login success: with valid credentials", () => {
       loginPage.Login("standard_user", "secret_sauce");
       cy.url().should("include", "/inventory.html");
