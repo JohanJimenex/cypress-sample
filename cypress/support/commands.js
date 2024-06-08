@@ -1,11 +1,23 @@
+/// <reference types="cypress" />
+
 // Este archivo contiene funciones utiles que se pueden reutilizar en diferentes archivos de prueba.
 // igual que el POM, si no estuvieras aplicando POM pudieras colocar aqui las funciones reutilizables
 
-Cypress.Commands.add("login", (username, password) => {
-  cy.get("##user-name").type(username);
-  cy.get("#password").type(password);
-  cy.get("#login-button").click();
+//O tambien se puede usar para crear tus propias funciones pero con mas poderes
+//Por ejemplo, una funcion que haga click en un elemento pero ademas espere a que el elemento este presente,
+//para evitar errores de que no se encuentra el elemento si la pagina tarda en cargar
+
+//Ojo esto es una forma que trae cypress para crear funciones,
+//pero tambien se puede hacer de la forma nativa con una funcion: ejem: function hacerClick(selector){ etc etc etc }
+Cypress.Commands.add("hacerClick", (selectorDelElemento) => {
+  cy.get(selectorDelElemento).should("exist").and("be.visible");
+  cy.get(selectorDelElemento).click();
 });
+
+
+
+
+
 
 // More examples of custom commands:
 

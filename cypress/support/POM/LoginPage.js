@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 class LoginPage {
   #inputUsername = "#user-name";
   #inputPassword = "#password";
@@ -11,7 +13,12 @@ class LoginPage {
   }
 
   Submit() {
-    cy.get(this.#buttonSubmit).click();
+    //Este es el metodo normal de hacer click de cypress
+    //cy.get(this.#buttonSubmit).click();
+
+    //Este es una funcion personalizada que se cree en la ruta cypress/support/commands.js, a los cuales Cypress le llama Comandos
+    //Este comando "en teoria" es mejor que el click normal, ya que yo le puse que espere a que el elemento este presente y visible antes de hacer click
+    cy.hacerClick(this.#buttonSubmit);
   }
 }
 
