@@ -34,5 +34,12 @@ describe("Login Page Tests Cases", () => {
     cy.get("[data-test='error']").should("be.visible");
   });
 
+  it("Login with valid username and password", async () => {
+    const data = await cy.fixture("example.json");
+    loginPage.Login(data.validUsername, data.validPassword);
+
+    cy.get(".product_label").should("be.visible");
+  });
+
   //Agrega mas casos de prueba mas para el login:
 });
